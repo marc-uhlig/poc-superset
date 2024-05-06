@@ -1,0 +1,119 @@
+_type: export
+__export_format: 4
+__export_date: 2024-05-06T10:18:36.983Z
+__export_source: insomnia.desktop.app:v2023.5.8
+resources:
+  - _id: req_b5c88f6ddcd7491088178dc706851a33
+    parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
+    modified: 1714990667542
+    created: 1714990324194
+    url: http://localhost:8088/api/v1/security/login
+    name: Get Bearer Token
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "password": "admin",
+          "username": "admin",
+        	"provider": "db"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1714990324194
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_2a0f9b5f36ef4425b35e9fd10d008450
+    parentId: null
+    modified: 1714988753162
+    created: 1714988753162
+    name: Superset POC
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_43d5ac66254a42f3999a8537b4a4aa17
+    parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
+    modified: 1714990340066
+    created: 1714988756379
+    url: http://localhost:8088/api/v1/security/guest_token
+    name: Get Guest Token
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "resources": [
+            {
+              "id": "5d0d48f2-9b72-45f2-9a22-198ac64e6a9c",
+              "type": "dashboard"
+            }
+          ],
+          "rls": [
+            {
+              "clause": "string",
+              "dataset": 0
+            }
+          ],
+          "user": {
+            "first_name": "Superset",
+            "last_name": "Admin",
+            "username": "admin"
+          }
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1714988756379
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_56e1b5c1fa8b66cdc959d8268fc5cb72640d6e95
+    parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
+    modified: 1714988753165
+    created: 1714988753165
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1714988753165
+    _type: environment
+  - _id: jar_56e1b5c1fa8b66cdc959d8268fc5cb72640d6e95
+    parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
+    modified: 1714990585792
+    created: 1714988753167
+    name: Default Jar
+    cookies:
+      - key: session
+        value: eyJfZnJlc2giOmZhbHNlLCJsb2NhbGUiOiJlbiJ9.Zjit-Q.TJXkqGcD9ZxP36Aa8FONpd2cRLQ
+        domain: localhost
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2024-05-06T09:46:16.303Z
+        lastAccessed: 2024-05-06T10:16:25.792Z
+        sameSite: lax
+        id: "37153060091521795"
+    _type: cookie_jar
