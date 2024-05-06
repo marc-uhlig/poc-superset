@@ -3,7 +3,9 @@
 * [Install superset](https://superset.apache.org/docs/installation/docker-compose)
 * Docker compose problem with version 24.x:
     * `env_file` key in `superset/docker-compose.yml`: change to `env_file: docker/.env`
-* `docker compose up -d`
+* Build with docker compose:
+** `export TAG=3.1.2` (replace with up-2-date version)
+** `docker compose -f docker-compose-image-tag.yml up -d`
 * Troubleshooting
     * Port `5432` must be free (Postgres)
         * check for local running Postgres server
