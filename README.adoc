@@ -1,4 +1,4 @@
-# poc-superset
+= poc-superset
 
 * [Install superset](https://superset.apache.org/docs/installation/docker-compose)
 * Docker compose problem with version 24.x:
@@ -12,3 +12,13 @@
         * `docker compose up -d --force-recreate`
         * inside `superset/superset-frontend`: `npm i && npm run dev`
 * login with `admin` / pw `admin`
+
+== Embedding Dashboards
+* enable Feature Flag `EMBEDDED_SUPERSET` inside `superset/docker/pythonpath_dev/superset_config.py`:
++
+[source, python]
+----
+FEATURE_FLAGS = {
+    "EMBEDDED_SUPERSET": True,
+}
+----
