@@ -1,13 +1,46 @@
 _type: export
 __export_format: 4
-__export_date: 2024-05-06T10:18:36.983Z
+__export_date: 2024-05-06T12:59:04.523Z
 __export_source: insomnia.desktop.app:v2023.5.8
 resources:
+  - _id: req_e595152bb432454dbe914e100473ca00
+    parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
+    modified: 1715000322328
+    created: 1714996111158
+    url: "{{ _.host }}/api/v1/security/csrf_token/"
+    name: Get CSRF Token
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNzE0OTk5NzU0LCJqdGkiOiJiMjg2MmVjMi0wNjBjLTQ3ZTYtYjk1NC0yMmVjMjNlODAyMzkiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoxLCJuYmYiOjE3MTQ5OTk3NTQsImV4cCI6MTcxNTAwMDY1NH0.Z2SGm_J-I026MhXmI2asn6_HFq4xPo28ZZdmD8MeX_E
+    metaSortKey: -1714996111158
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_2a0f9b5f36ef4425b35e9fd10d008450
+    parentId: null
+    modified: 1714988753162
+    created: 1714988753162
+    name: Superset POC
+    description: ""
+    scope: collection
+    _type: workspace
   - _id: req_b5c88f6ddcd7491088178dc706851a33
     parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
-    modified: 1714990667542
+    modified: 1715000310393
     created: 1714990324194
-    url: http://localhost:8088/api/v1/security/login
+    url: "{{ _.host }}/api/v1/security/login"
     name: Get Bearer Token
     description: ""
     method: POST
@@ -35,19 +68,11 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: wrk_2a0f9b5f36ef4425b35e9fd10d008450
-    parentId: null
-    modified: 1714988753162
-    created: 1714988753162
-    name: Superset POC
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_43d5ac66254a42f3999a8537b4a4aa17
     parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
-    modified: 1714990340066
+    modified: 1715000301671
     created: 1714988756379
-    url: http://localhost:8088/api/v1/security/guest_token
+    url: "{{ _.host }}/api/v1/security/guest_token/"
     name: Get Guest Token
     description: ""
     method: POST
@@ -57,16 +82,11 @@ resources:
         {
           "resources": [
             {
-              "id": "5d0d48f2-9b72-45f2-9a22-198ac64e6a9c",
+              "id": "1",
               "type": "dashboard"
             }
           ],
-          "rls": [
-            {
-              "clause": "string",
-              "dataset": 0
-            }
-          ],
+        	"rls": [],
           "user": {
             "first_name": "Superset",
             "last_name": "Admin",
@@ -77,9 +97,15 @@ resources:
     headers:
       - name: Content-Type
         value: application/json
-      - name: User-Agent
-        value: insomnia/2023.5.8
-    authentication: {}
+        id: pair_377e155048764ca7bd92b9e7a3e8290f
+      - id: pair_0ade8f011b6a4b7788f804d70058bb1b
+        name: X-CSRF-TOKEN
+        value: IjlhYzJjYThkOTFiMDNmODY2YWM3OGI1YjU3ZTI1MDA1NjgwYzM1N2Ii.ZjjSVw.uWEnI5yloxBilEKQrjCyId0pjp8
+        description: ""
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNzE0OTk5OTEyLCJqdGkiOiIwM2VlZWI5Zi1iNTQ2LTRjOTAtOGM1MS1kYWMyNjAxZDY1N2EiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoxLCJuYmYiOjE3MTQ5OTk5MTIsImV4cCI6MTcxNTAwMDgxMn0.qVTswFrtVVpIyuR7HsBq2cHsZWtIJ6YZAd6MWMGCdKk
+      disabled: false
     metaSortKey: -1714988756379
     isPrivate: false
     settingStoreCookies: true
@@ -91,29 +117,33 @@ resources:
     _type: request
   - _id: env_56e1b5c1fa8b66cdc959d8268fc5cb72640d6e95
     parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
-    modified: 1714988753165
+    modified: 1715000290237
     created: 1714988753165
     name: Base Environment
-    data: {}
-    dataPropertyOrder: null
+    data:
+      host: http://localhost:8088
+    dataPropertyOrder:
+      "&":
+        - host
     color: null
     isPrivate: false
     metaSortKey: 1714988753165
     _type: environment
   - _id: jar_56e1b5c1fa8b66cdc959d8268fc5cb72640d6e95
     parentId: wrk_2a0f9b5f36ef4425b35e9fd10d008450
-    modified: 1714990585792
+    modified: 1714997038490
     created: 1714988753167
     name: Default Jar
     cookies:
       - key: session
-        value: eyJfZnJlc2giOmZhbHNlLCJsb2NhbGUiOiJlbiJ9.Zjit-Q.TJXkqGcD9ZxP36Aa8FONpd2cRLQ
+        value: eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiOWFjMmNhOGQ5MWIwM2Y4NjZhYzc4YjViNTdlMjUwMDU2ODBjMzU3YiIsImxvY2FsZSI6ImVuIn0.ZjjHLg.GZRcsR2xpKSWTDFYH0APGGlerag
         domain: localhost
         path: /
         httpOnly: true
         hostOnly: true
-        creation: 2024-05-06T09:46:16.303Z
-        lastAccessed: 2024-05-06T10:16:25.792Z
+        creation: 2024-05-06T12:03:55.693Z
+        lastAccessed: 2024-05-06T12:03:58.490Z
         sameSite: lax
-        id: "37153060091521795"
+        id: "5658371111736513"
+        expires: null
     _type: cookie_jar
